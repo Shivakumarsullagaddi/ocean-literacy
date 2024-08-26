@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ocean Literacy</title>
+  <link rel="stylesheet" href="testing.css">
+</head>
+<body>
+  <header>
+   <a href="index.html"><img src="jellyfish-logo.png" alt="Jellyfish Logo" class="logo" ></a>
+    <h1>Ocean Literacy</h1>
+	
+  </header>
+  
+  <main>
+    <section id="intro">
+      <h2>Welcome to Ocean Literacy</h2>
+      <p>Explore the wonders of the ocean and test your knowledge with our interactive quiz!</p>
+    </section>
+    
+    <section id="quiz-section">
+      <div id="quiz-container">
+        <div id="quiz">
+          <h2 id="question">Question text will go here</h2>
+          <div id="choices"></div>
+          <button id="next-btn" onclick="nextQuestion()">Next Question</button>
+          <button id="replay-btn" onclick="replayQuiz()">Replay</button>
+        </div>
+        <div id="feedback" class="feedback"></div>
+      </div>
+      <div id="quiz-image">
+        <img id="question-image" src="" alt="Ocean Image">
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const quizData = [
+      {
+        question: "What percentage of Earth's surface is covered by oceans?",
+        choices: ["50%", "60%", "70%", "80%"],
+        correct: 2,
+        image: "ocean-surface.jpg"
+      },
+      {
+        question: "Which ocean is the largest?",
+        choices: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+        correct: 3,
+        image: "pacific-ocean.jpg"
+      },
+      {
+        question: "What is the deepest known point in the Earth's oceans?",
+        choices: ["Mariana Trench", "Puerto Rico Trench", "Java Trench", "Tonga Trench"],
+        correct: 0,
+        image: "mariana-trench.jpg"
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    const questionEl = document.getElementById("question");
+    const choicesEl = document.getElementById("choices");
+    const nextBtn = document.getElementById("next-btn");
+    const replayBtn = document.getElementById("replay-btn");
+    const feedbackEl = document.getElementById("feedback");
+    const questionImageEl = document.getElementById("question-image");
+
+    function loadQuestion() {
+      const currentQuizData = quizData[currentQuestion];
+      questionEl.innerText = currentQuizData.question;
+      choicesEl.innerHTML = '';
+      currentQuizData.choices.forEach((choice, index) => {
+        const button = document.createElement('button');
+        button.classList.add('choice');
+        button.innerText = choice;
+        button.onclick = () => selectAnswer(index);
+        choicesEl.appendChild(button);
+      });
+      questionImageEl.src = currentQuizData.image;
+      questionImageEl.alt = `Image for question ${currentQuestion + 1}`;
+      nextBtn.style.display = "none";
+      feedbackEl.style.display = "none";
+      replayBtn.style.display = "none";
+    }
+
+    // ... (rest of the JavaScript remains the same)
+  
+    function selectAnswer(index) {
+      const currentQuizData = quizData[currentQuestion];
+      const buttons = choicesEl.getElementsByClassName("choice");
+      if (index === currentQuizData.correct) {
+        buttons[index].style.backgroundColor = "#28a745";
+        score++;
+        feedbackEl.style.display = "none";
+      } else {
+        buttons[index].style.backgroundColor = "#dc3545";
+        showCorrectAnswer(currentQuizData.correct);
+        showFeedback(`Wrong answer! The correct answer is: ${currentQuizData.choices[currentQuizData.correct]}`);
+      }
+      nextBtn.style.display = "block";
+      disableChoices();
+    }
+
+    function disableChoices() {
+      const buttons = choicesEl.getElementsByClassName("choice");
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+      }
+    }
+
+    function showCorrectAnswer(correctIndex) {
+      const buttons = choicesEl.getElementsByClassName("choice");
+      buttons[correctIndex].style.backgroundColor = "#28a745";
+    }
+
+    function showFeedback(message) {
+      feedbackEl.innerText = message;
+      feedbackEl.style.display = "block";
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      questionEl.innerText = `You scored ${score} out of ${quizData.length}`;
+      choicesEl.innerHTML = "";
+      nextBtn.style.display = "none";
+      replayBtn.style.display = "block";
+      feedbackEl.style.display = "none";
+    }
+
+    function replayQuiz() {
+      currentQuestion = 0;
+      score = 0;
+      loadQuestion();
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>

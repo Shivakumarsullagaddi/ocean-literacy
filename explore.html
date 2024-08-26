@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+        .hamburger-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .hamburger-menu .line {
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+        }
+         .hamburger-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            margin-right: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 24px;
+        }
+
+        .hamburger-button .line {
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-button:hover .line {
+            background-color: #00C4CC;
+        }
+       header.img
+        {
+         width:20px;
+         height:20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00C4CC;
+        }
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+        .create-btn {
+            background-color: #7D2AE8;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 25px;
+            padding: 10px;
+        }
+        .search-bar input {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .category {
+            background-color: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+        .suggestions {
+            padding: 20px;
+        }
+        .suggestions h2 {
+            margin-bottom: 20px;
+        }
+        .templates {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+        }
+        .template {
+            min-width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .template img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .template p {
+            padding: 10px;
+            margin: 0;
+            text-align: center;
+        }
+        .explore
+        {
+           background-color: #7D2AE8;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-right:20px;
+        }
+.jelly
+{           width:70px;
+             height:55px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+}
+.logo
+{
+color:#7D2AE8;
+}
+.hero {
+            display: flex;
+            align-items: flex-start;
+            color: white;
+            border-radius: 20px;
+            padding: 50px 20px;
+        }
+
+ .jellyfish-container 
+     {
+            flex: 0 0 auto;
+            margin-right: 20px;
+        }
+   .jellyfish {
+            width: 300px;
+            height: 150px;
+            border-radius: 20px;
+        }
+
+        .jellyfish-info {
+            flex: 1;
+        }
+        fieldset
+        {
+          border-radius:20px;
+          background-color:rgba(233, 233, 233, 0.2);
+        }
+        .jword
+        {
+         margin-left:300px;
+         margin-top:10px;
+        }
+        .container {
+  display: flex;
+  align-items: center;
+}
+img
+{
+    border-radius: 20px;
+}
+.image-container
+{
+  flex: 1;
+}
+
+.text-container {
+  flex: 1;
+  padding-left: 20px; /* Adjust the padding as needed */
+}
+#logo img{
+                padding: 10px;
+            display: block;
+            width:px;
+            height: 100px;
+            border-radius: 20px;
+            }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo" >
+            <a href="index.html"></a><img src="ocean_literacy_logo.png" alt="Ocean Literacy Logo"> </a>
+            
+          </div>      
+        <div class="logo">OCEAN LITREACY</div>
+        <div class="header-right">
+            <a href="explore.html" class="explore">EXPLORE</a>
+            <a href="https://www.amazon.in/customer-preferences/country/?ref_=navm_em_locale_0_1_1_23" class="create-btn">PLAY GAME</a>
+         </div>
+    </header>
+    <fieldset
+    <div class="container">
+        <div class="image-container">
+          <img src="jelly.jpg" alt="Jellyfish" style="width:300px">
+        </div>
+        <div class="text-container">
+          <h2>Jellyfish</h2>
+          <p>Body Parts: Bell (umbrella), tentacles, oral arms, mouth, nematocysts (stinging cells).</p>
+        </div>
+      </div>
+      </fieldset>
+      <fieldset
+    <div class="container">
+        <div class="image-container">
+          <img src="nemo.jpg" alt="nemo" style="width:300px">
+        </div>
+        <div class="text-container">
+          <h2>Clownfish</h2>
+          <p>
+            Clownfish are small, brightly colored fish famous for living among sea anemones. They have a special relationship with anemones - the clownfish are protected by the anemone's stinging tentacles, and in return, they help keep the anemone clean. Clownfish are also known as anemonefish.</p>
+        </div>
+      </div>
+      </fieldset>
+      <fieldset>
+      <div class="container">
+        <div class="image-container">
+          <img src="seahorse.jpg" alt="seahorse" style="width:300px">
+        </div>
+        <div class="text-container">
+          <h2> Seahorse</h2>
+          <p>
+Seahorses are unique fish with horse-like heads and curled tails. They swim upright and can change color to blend in with their surroundings. Interestingly, male seahorses carry and give birth to the babies!</p>
+        </div>
+      </div>
+      </fieldset>
+    </fieldset>
+    <fieldset>
+    <div class="container">
+      <div class="image-container">
+        <img src="octopus.jpg" alt="octopus" style="width:300px">
+      </div>
+      <div class="text-container">
+        <h2>Octopus</h2>
+        <p>
+            Octopuses are intelligent sea creatures with eight arms. They can change color and shape to hide from predators or catch prey. Octopuses are known for their problem-solving skills and can even use tools.</p>
+      </div>
+    </div>
+    </fieldset>
+    <fieldset>
+        <div class="container">
+          <div class="image-container">
+            <img src="dolphin.jpg" alt="dolphin" style="width:300px">
+          </div>
+          <div class="text-container">
+            <h2>Dolphins</h2>
+            <p>Dolphins are smart, playful mammals that live in the sea. They breathe air through a blowhole on top of their head and use echolocation (sound waves) to find food and navigate. Dolphins are known for their friendly behavior and often live in groups called pods.</p>
+          </div>
+        </div>
+        </fieldset>
+        <fieldset>
+            <div class="container">
+              <div class="image-container">
+                <img src="turtle.jpg" alt="turtle" style="width:300px">
+              </div>
+              <div class="text-container">
+                <h2>Sea Turtle</h2>
+                <p>
+                    
+                    Sea turtles are reptiles that have lived in the oceans for over 100 million years. They have a hard shell for protection and flippers for swimming. Sea turtles can live for many decades and travel long distances across oceans.</p>
+              </div>
+            </div>
+         </fieldset>
+         <fieldset>
+            <div class="container">
+              <div class="image-container">
+                <img src="shark.jpg" alt="shark" style="width:300px">
+              </div>
+              <div class="text-container">
+                <h2>Shark</h2>
+                <p>Sharks are fish with a skeleton made of cartilage instead of bone. They have multiple rows of sharp teeth and are excellent hunters. Contrary to popular belief, most sharks are not dangerous to humans. Sharks play a crucial role in maintaining the balance of ocean ecosystems.</p>
+              </div>
+            </div>
+            </fieldset>
+            <fieldset>
+                <div class="container">
+                  <div class="image-container">
+                    <img src="whale.jpg" alt="whale" style="width:300px">
+                  </div>
+                  <div class="text-container">
+                    <h2>Blue Whale</h2>
+                    <p>The blue whale is the largest animal ever known to have existed on Earth. It can grow up to 100 feet long and weigh as much as 200 tons. Despite their enormous size, blue whales mainly eat tiny krill. They are endangered due to past whaling activities.</p>
+                  </div>
+                </div>
+            </fieldset>
+</body>
+</html>
